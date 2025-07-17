@@ -58,3 +58,17 @@ class Getters(Scene):
         self.play(
             rect.animate.to_edge(UR), circ.animate.scale(0.5), run_time=4
         )  # our arrow will not follow this movement cause arrow is already placed at a static place for arrow to be moving along with rect we need to use always_redraw method
+
+
+class Updaters(Scene):
+    def construct(self):
+        num = Text("ln(2)")
+        box = always_redraw(
+            lambda: SurroundingRectangle(
+                num, color=BLUE, fill_opacity=0.4, fill_color=RED, buff=2
+            )
+        )
+        name = always_redraw(lambda: Text("Abhay").next_to(box, DOWN, buff=0.25))
+        self.play(Create(VGroup(num, box, name)))
+        self.play(num.animate.shift(RIGHT * 3), run_time=2)
+        self.wait()
