@@ -22,3 +22,17 @@ class Testing(Scene):
         self.play(name.animate.to_edge(UR), run_time=2)
         self.play(sq.animate.scale(2), tri.animate.to_edge(DL), run_time=3)
         self.wait()
+
+class Errors(Scene):
+    def construct(self):
+        c = Circle(radius=2)
+        self.play(Write(c))
+        # spelling or indentation error try reading the error messages correctly
+        #note kwargs means keyword arguments
+        
+
+class Library(Scene):
+    def construct(self):
+        ax = Axes()
+        self.play(Create(ax), run_time=2)
+        self.wait()
