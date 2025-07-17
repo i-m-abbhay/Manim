@@ -87,3 +87,51 @@ class ValueTrackers(Scene):
         self.play(
             k.animate.set_value(2), run_time=2, rate_func=linear
         )  # other possible params are linear, smooth, smooth, etc
+
+
+class Graphing(Scene):
+    def construct(self):
+        plane = (
+            NumberPlane(x_range=[-4, 4, 1], x_length=7, y_range=[0, 16, 4], y_length=5)
+            .to_edge(DOWN)
+            .add_coordinates()
+        )
+        labels = plane.get_axis_labels(x_label="x", y_label="f(x)")
+        parab = plane.plot(lambda x: x**2, color=GREEN)
+        func_label = (
+            MathTex("f(x) = x^2")
+            .scale(0.6)
+            .next_to(parab, UR, buff=0.5)
+            .set_color(GREEN)
+        )
+
+        area = plane.get_riemann_rectangles(
+            parab,
+            x_range=[-2, 2],
+            dx=0.05,
+            stroke_width=0.1,
+            stroke_color=RED,
+            fill_opacity=0.5,
+        )
+        area_label = (
+            MathTex("\\sum_{i=1}^{n} f(x_i) \\Delta x")
+            .scale(0.6)
+            .next_to(area, UP, buff=0.5)
+        )
+
+        self.play(DrawBorderThenFill(plane))
+        self.play(Create(parab), Create(labels))
+        self.play(Write(func_label))
+        self.play(Create(area), Write(area_label))
+        self.wait()
+
+
+class Graphing2(Scene):
+    def construct(self):
+        plane = (
+            NumberPlane(x_range=[-4, 4, 1], x_length=7, y_range=[0, 16, 4], y_length=5)
+            .to_edge(DOWN)
+            .add_coordinates()
+        )
+        labels = plane.get_axis_labels(x_label="x", y_label="f(x)")
+        parab = plane.plot(lambda x: x**2, color=GREEN)
