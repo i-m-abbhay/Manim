@@ -72,3 +72,18 @@ class Updaters(Scene):
         self.play(Create(VGroup(num, box, name)))
         self.play(num.animate.shift(RIGHT * 3), run_time=2)
         self.wait()
+
+
+class ValueTrackers(Scene):
+    def construct(self):
+        # mobjects are the objects that are being animated
+        # value trackers are the objects that are used to track the value of the mobjects
+        k = ValueTracker(0)
+        num = always_redraw(
+            lambda: DecimalNumber().set_value(k.get_value()).to_edge(UP)
+        )
+        self.play(FadeIn(num))
+        self.wait()
+        self.play(
+            k.animate.set_value(2), run_time=2, rate_func=linear
+        )  # other possible params are linear, smooth, smooth, etc

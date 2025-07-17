@@ -10,7 +10,7 @@ This project documents various Manim concepts and techniques through practical e
 
 - Python 3.8+
 - Manim Community
-- LaTeX (optional, for MathTex rendering)
+- LaTeX (required for MathTex and DecimalNumber rendering)
 
 ## 🚀 Setup Instructions
 
@@ -19,8 +19,9 @@ This project documents various Manim concepts and techniques through practical e
 # Install Manim Community
 pip install manim
 
-# Install LaTeX (optional, for mathematical expressions)
+# Install LaTeX (required for mathematical expressions)
 # Download and install MiKTeX from https://miktex.org/download
+# Choose "Install for current user" during installation
 ```
 
 ### 2. Code Formatting
@@ -82,6 +83,14 @@ black --check .
   - Dynamic rectangle and text positioning
   - Real-time updates during animations
 
+### 7. **ValueTrackers** - Value Tracking System
+- **File**: `ManimCourse.py` (lines 82-85)
+- **Concept**: Using ValueTracker to track and animate numerical values
+- **Features**:
+  - `ValueTracker()` for tracking numerical values
+  - `DecimalNumber()` for displaying tracked values
+  - `set_value()` method for updating displayed numbers
+
 ## 🎥 Rendering Commands
 
 ### Basic Rendering
@@ -93,6 +102,7 @@ manim .\ManimCourse.py SceneName -pqm
 manim .\ManimCourse.py Pith -pqm
 manim .\ManimCourse.py Testing -pqm
 manim .\ManimCourse.py Updaters -pqm
+manim .\ManimCourse.py ValueTrackers -pqm
 ```
 
 ### Quality Options
@@ -120,6 +130,7 @@ Manim/
 ├── pyproject.toml          # Black formatting configuration
 ├── .vscode/
 │   └── settings.json       # VS Code settings for Black
+├── run_manim.bat           # Batch file for running manim with LaTeX
 ├── media/                  # Generated output files
 │   ├── images/
 │   ├── texts/
@@ -155,12 +166,17 @@ The project includes `.vscode/settings.json` with:
 5. **Dynamic Updates**: always_redraw(), getter methods
 6. **Mathematical Objects**: Axes, MathTex (with LaTeX)
 7. **Grouping**: VGroup for multiple objects
+8. **Value Tracking**: ValueTracker, DecimalNumber for numerical animations
 
 ## 🐛 Common Issues & Solutions
 
 ### LaTeX Not Found Error
 **Problem**: `FileNotFoundError: [WinError 2] The system cannot find the file specified`
-**Solution**: Install MiKTeX or use `Text()` instead of `MathTex()`
+**Solution**: 
+1. Install MiKTeX from https://miktex.org/download
+2. Add LaTeX to PATH: `C:\Users\%USERNAME%\AppData\Local\Programs\MiKTeX\miktex\bin\x64`
+3. Use the provided `run_manim.bat` file for automatic PATH setup
+4. Alternative: Use `Text()` instead of `MathTex()` or `DecimalNumber()`
 
 ### Import Errors
 **Problem**: Module not found errors
@@ -169,6 +185,13 @@ The project includes `.vscode/settings.json` with:
 ### Rendering Issues
 **Problem**: Videos not generating
 **Solution**: Check file paths and ensure all dependencies are installed
+
+### Virtual Environment PATH Issues
+**Problem**: LaTeX not found when using virtual environment
+**Solution**: 
+1. Use the provided `run_manim.bat` file
+2. Or manually add LaTeX to PATH: `$env:PATH += ";C:\Users\$env:USERNAME\AppData\Local\Programs\MiKTeX\miktex\bin\x64"`
+3. Or add LaTeX to system PATH permanently
 
 ## 🤝 Contributing
 
