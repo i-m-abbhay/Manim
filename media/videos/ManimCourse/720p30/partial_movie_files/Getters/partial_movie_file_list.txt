@@ -1,3 +1,4 @@
 # This file is used internally by FFMPEG.
-file 'file:C:/Users/128-PC/Desktop/Manim/media/videos/ManimCourse/720p30/partial_movie_files/Getters/2016333726_3083398713_223132457.mp4'
-file 'file:C:/Users/128-PC/Desktop/Manim/media/videos/ManimCourse/720p30/partial_movie_files/Getters/543634251_2834709167_1330009438.mp4'
+file 'file:C:/Users/128-PC/Desktop/Manim/media/videos/ManimCourse/720p30/partial_movie_files/Getters/2016333726_3715508449_223132457.mp4'
+file 'file:C:/Users/128-PC/Desktop/Manim/media/videos/ManimCourse/720p30/partial_movie_files/Getters/543634251_2834709167_3290912183.mp4'
+file 'file:C:/Users/128-PC/Desktop/Manim/media/videos/ManimCourse/720p30/partial_movie_files/Getters/543634251_1581590400_2895584939.mp4'
