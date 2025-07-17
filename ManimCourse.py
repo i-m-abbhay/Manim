@@ -36,3 +36,14 @@ class Library(Scene):
         ax = Axes()
         self.play(Create(ax), run_time=2)
         self.wait()
+
+class Getters(Scene):
+    def construct(self):
+        rect = Rectangle(color=WHITE, height=3, width=2.5).to_edge(UL)
+        circ = Circle().to_edge(DOWN)
+
+        arrow = Line(start=rect.get_bottom(), end=circ.get_top(), buff=0.2).add_tip()
+
+        self.play(Create(VGroup(rect, circ, arrow)))
+        self.wait()
+        
