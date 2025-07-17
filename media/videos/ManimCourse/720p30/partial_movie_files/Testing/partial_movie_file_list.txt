@@ -3,3 +3,6 @@ file 'file:C:/Users/128-PC/Desktop/Manim/media/videos/ManimCourse/720p30/partial
 file 'file:C:/Users/128-PC/Desktop/Manim/media/videos/ManimCourse/720p30/partial_movie_files/Testing/543634251_1618147617_3569607900.mp4'
 file 'file:C:/Users/128-PC/Desktop/Manim/media/videos/ManimCourse/720p30/partial_movie_files/Testing/543634251_2052290143_2105730223.mp4'
 file 'file:C:/Users/128-PC/Desktop/Manim/media/videos/ManimCourse/720p30/partial_movie_files/Testing/543634251_2834709167_3958665689.mp4'
+file 'file:C:/Users/128-PC/Desktop/Manim/media/videos/ManimCourse/720p30/partial_movie_files/Testing/543634251_606784632_2642935448.mp4'
+file 'file:C:/Users/128-PC/Desktop/Manim/media/videos/ManimCourse/720p30/partial_movie_files/Testing/543634251_1889878139_476204908.mp4'
+file 'file:C:/Users/128-PC/Desktop/Manim/media/videos/ManimCourse/720p30/partial_movie_files/Testing/543634251_2834709167_1504971298.mp4'

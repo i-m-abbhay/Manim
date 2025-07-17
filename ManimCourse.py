@@ -17,5 +17,8 @@ class Testing(Scene):
         self.play(DrawBorderThenFill(sq), run_time=2)
         self.play (Create(tri))
         self.wait()
-
-        self.play()
+        
+        #now animating name etc existing shapes or elements
+        self.play(name.animate.to_edge(UR), run_time=2)
+        self.play(sq.animate.scale(2), tri.animate.to_edge(DL), run_time=3)
+        self.wait()
